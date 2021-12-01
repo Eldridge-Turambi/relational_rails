@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_01_002504) do
+ActiveRecord::Schema.define(version: 2021_12_01_223547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bars", force: :cascade do |t|
+    t.string "name"
+    t.integer "employee_count"
+    t.boolean "license"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "drinks", force: :cascade do |t|
+    t.string "name"
+    t.integer "cost"
+    t.boolean "alcoholic_bev"
+    t.bigint "bars_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bars_id"], name: "index_drinks_on_bars_id"
+  end
 
   create_table "performers", force: :cascade do |t|
     t.string "name"
@@ -33,5 +51,6 @@ ActiveRecord::Schema.define(version: 2021_12_01_002504) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "drinks", "bars", column: "bars_id"
   add_foreign_key "performers", "venues"
 end
