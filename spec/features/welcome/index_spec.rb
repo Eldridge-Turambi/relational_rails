@@ -6,7 +6,6 @@ RSpec.describe 'home page' do
   end
 
   it 'visits the home page' do
-
     expect(current_path).to eq('/')
     expect(page).to have_content('Welcome to our website')
   end
