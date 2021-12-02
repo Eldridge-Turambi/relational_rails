@@ -4,7 +4,7 @@ class CreateDrinks < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :cost
       t.boolean :alcoholic_bev
-      t.references :bars, foreign_key: true
+      t.references :bar, foreign_key: true
 
       t.timestamps
     end
