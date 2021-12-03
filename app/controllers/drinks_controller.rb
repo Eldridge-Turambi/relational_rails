@@ -10,4 +10,8 @@ class DrinksController < ApplicationController
   def create
       drink = Drink.new(drink_params)
   end
+
+  def show
+    @drink = Drink.find(params[:id])
+  end
 end
