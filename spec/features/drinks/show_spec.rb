@@ -1,3 +1,4 @@
+require "rails_helper"
 RSpec.describe 'drinks index page' do
   before :each do
     @fort_greene = Bar.create!(name: 'Fort Greene', employee_count: 20, license: true)
@@ -9,6 +10,5 @@ RSpec.describe 'drinks index page' do
 
   it "visits show page" do
     expect(current_path).to eq("/drinks/#{@french_75.id}")
-    save_and_open_page
   end
 end
