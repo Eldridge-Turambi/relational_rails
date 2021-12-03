@@ -1,0 +1,8 @@
+<h1>Here are the performers in the <%= @venue.name %> venue</h1>
+
+
+<% @performers.each do |performer| %>
+  <%= performer.name %>
+  <%= performer.age %>
+  <%= performer.repeater %>
+<% end %>
