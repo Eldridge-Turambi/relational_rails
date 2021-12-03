@@ -8,9 +8,9 @@ class VenuesController < ApplicationController
 
   end
 
-  def create
-    venue = Venue.create(venue_params)
-  end
+  # def create
+  #   venue = Venue.create(venue_params)
+  # end
 
   def show
     @venue = Venue.find(params[:id])
