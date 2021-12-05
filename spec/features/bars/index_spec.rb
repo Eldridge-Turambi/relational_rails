@@ -33,5 +33,13 @@ RSpec.describe 'bars index page' do
 
       expect(current_path).to eq('/drinks')
     end
+
+    it 'shows bar link on every page' do
+      visit '/bars/'
+
+      click_link('Bars')
+
+      expect(current_path).to eq('/bars')
+    end
   end
 end
