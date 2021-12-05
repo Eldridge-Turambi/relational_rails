@@ -4,4 +4,8 @@ class Bar < ApplicationRecord
   validates_presence_of :license
 
   has_many :drinks
+
+  # def method_name
+  #
+  # end
 end
