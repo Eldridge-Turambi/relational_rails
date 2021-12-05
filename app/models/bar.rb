@@ -5,7 +5,8 @@ class Bar < ApplicationRecord
 
   has_many :drinks
 
-  # def method_name
-  #
-  # end
+  def drinks_count
+    # binding.pry
+    drinks.count
+  end
 end
