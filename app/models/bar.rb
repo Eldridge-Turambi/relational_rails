@@ -6,7 +6,6 @@ class Bar < ApplicationRecord
   has_many :drinks
 
   def drinks_count
-    # binding.pry
     drinks.count
   end
 end
