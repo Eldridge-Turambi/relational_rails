@@ -4,5 +4,9 @@
 
 <% @bars.each do |bar| %>
   <p><%= bar.name %></p>
+  <p><%= bar.employee_count %></p>
+  <p><%= bar.license %></p>
   <p><%= bar.created_at %></p>
 <% end %>
+
+ <%= link_to "New Bar", "/bars/new" %>

@@ -10,13 +10,14 @@ Rails.application.routes.draw do
   # get '/performers', to: 'performers#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # get '/bars', to: 'bars#create'
   get '/bars', to: 'bars#index'
+  get '/bars/new', to: 'bars#new'
+  post '/bars', to: 'bars#create'
   get '/bars/:id', to: 'bars#show'
+  get '/bars/:id/drinks', to: 'bar_drinks#index'
 
   get '/drinks', to: 'drinks#index'
   get '/drinks/:id', to: 'drinks#show'
 
-  get '/bars/:id/drinks', to: 'bar_drinks#index'
 
 end
