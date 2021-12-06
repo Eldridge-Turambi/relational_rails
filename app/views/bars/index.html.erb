@@ -1,5 +1,8 @@
+<header><%= link_to "Drinks", "/drinks" %></<header>
+<header><%= link_to "Bars", "/bars" %></<header>
 <h1>Bars</h1>
 
 <% @bars.each do |bar| %>
   <p><%= bar.name %></p>
-  <% end %>
+  <p><%= bar.created_at %></p>
+<% end %>
