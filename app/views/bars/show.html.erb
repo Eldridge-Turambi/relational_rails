@@ -1,2 +1,5 @@
 <h1><%= @bar.name %></h1>
+
 <p><%= @bar.drinks_count %></p>
+
+<%= link_to "#{@bar.name}'s Drinks Here", "/bars/#{@bar.id}/drinks" %>

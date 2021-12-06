@@ -15,4 +15,11 @@ RSpec.describe 'bars index page' do
     expect(current_path).to eq("/bars/#{@monkey_bar.id}")
   end
 
+  it 'links to drinks by bar id' do
+    visit "/bars/#{@fort_greene.id}"
+
+    click_link "#{@fort_greene.name}'s Drinks Here"
+
+    expect(current_path).to eq("/bars/#{@fort_greene.id}/drinks")
+  end
 end
