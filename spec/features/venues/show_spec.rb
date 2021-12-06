@@ -11,4 +11,10 @@ RSpec.describe 'Venue id page' do
   it 'shows attributes of the venue' do
     expect(current_path).to eq("/venues/#{@red_rocks.id}")
   end
+
+  it 'Links to performers by venue id' do
+    click_link "#{@red_rocks.name}'s performers here"
+
+    expect(current_path).to eq("/venues/#{@red_rocks.id}/performers")
+  end
 end
