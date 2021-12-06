@@ -7,9 +7,9 @@ class DrinksController < ApplicationController
 
   end
 
-  def create
-      drink = Drink.new(drink_params)
-  end
+  # def create
+  #     drink = Drink.new(drink_params)
+  # end
 
   def show
     @drink = Drink.find(params[:id])

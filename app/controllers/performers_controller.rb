@@ -7,9 +7,9 @@ class PerformersController < ApplicationController
   def new
   end
 
-  def create
-    performer = Performer.create!(performer_params)
-  end
+  # def create
+  #   performer = Performer.create!(performer_params)
+  # end
 
   def show
     @performer = Performer.find(params[:id])

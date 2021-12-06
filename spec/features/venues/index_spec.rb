@@ -17,4 +17,22 @@ RSpec.describe 'venues index page' do
     expect(page).to have_content(@blue_bird.name)
     expect(page).to have_content(@filmore.name)
   end
+
+  describe 'usability Iteration 1' do
+    it 'shows performer link on every page' do
+      visit '/venues/'
+
+      click_link('Performers')
+
+      expect(current_path).to eq('/performers')
+    end
+
+    it 'shows venue link on every page' do
+      visit '/performers/'
+
+      click_link('Venues')
+
+      expect(current_path).to eq('/venues')
+    end
+  end
 end

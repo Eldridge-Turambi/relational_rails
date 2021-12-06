@@ -6,12 +6,12 @@ class BarsController < ApplicationController
   def new
   end
 
-  def create
-    # bar = Bar.new(bar_params)
-    # bar.save
-    # ^^^this is the same
-    bar = Bar.create(bar_params)
-  end
+  # def create
+  #   # bar = Bar.new(bar_params)
+  #   # bar.save
+  #   # ^^^this is the same
+  #   bar = Bar.create(bar_params)
+  # end
 
   def show
     @bar = Bar.find(params[:id])
