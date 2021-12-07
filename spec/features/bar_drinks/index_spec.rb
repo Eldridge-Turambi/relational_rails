@@ -17,4 +17,10 @@ RSpec.describe 'bar_drinks index page' do
     expect(page).to have_content(@french_75.alcoholic_bev)
     expect(page).to have_content(@margarita.alcoholic_bev)
   end
+
+  it 'sees a link to create new drinks for bar' do
+    click_link "Create Drink"
+
+    expect(current_path).to eq("/bars/#{@fort_greene.id}/drinks/new")
+  end
 end
