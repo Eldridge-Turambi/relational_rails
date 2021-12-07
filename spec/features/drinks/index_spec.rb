@@ -27,4 +27,5 @@ RSpec.describe 'drinks index page' do
 
     expect(current_path).to eq('/bars/new')
   end
+
 end
