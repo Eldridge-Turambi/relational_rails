@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   get '/venues/:id/performers', to: 'venue_performers#index'
   get '/venues/:id/performers/new', to: 'venue_performers#new'
+  post '/venues/:id/performers', to: 'venue_performers#create'
+
+  get '/performers/:id/edit', to: 'performers#edit'
+  patch '/performers/:id', to: 'performers#update'
 
 
   # get '/performers', to: 'performers#index'

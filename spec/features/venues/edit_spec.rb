@@ -8,11 +8,13 @@ RSpec.describe 'Venue id page' do
   # end
 
   it 'fills out form, hit submit and taken back to venue index' do
-    blue_bird = Venue.create!(name: 'BLUE nir', lights: true, capacity: 500)
+    blue_bird = Venue.create!(name: 'BLUE nir', lights: false, capacity: 500)
     visit "/venues/#{blue_bird.id}/edit"
 
     fill_in('name', with: "BLUE BIRD")
-    fill_in('lights', with: "true")
+
+    # Line 15 won't work check google searches in sticky notes
+    fill_in('lights', with: true)
     fill_in('capacity', with: "500")
 
     click_button('Update This Venue')
