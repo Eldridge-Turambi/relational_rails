@@ -7,4 +7,8 @@ class Drink < ApplicationRecord
   def self.is_alcoholic
     where(alcoholic_bev: true)
   end
+
+  def self.alpha_sort
+    order(:name)
+  end
 end
