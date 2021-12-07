@@ -8,10 +8,11 @@ RSpec.describe 'bars index page' do
     @french_75 = Drink.create!(name: 'French 75', cost: 15, alcoholic_bev: true, bar_id: @fort_greene.id)
     @margarita = Drink.create!(name: 'Margarita', cost: 10, alcoholic_bev: true, bar_id: @fort_greene.id)
     @glühwein = Drink.create!(name: 'Glüwhein', cost: 5, alcoholic_bev: true, bar_id: @monkey_bar.id)
-    visit "/bars/#{@monkey_bar.id}"
   end
 
   it "visits show page" do
+    visit "/bars/#{@monkey_bar.id}"
+
     expect(current_path).to eq("/bars/#{@monkey_bar.id}")
   end
 
@@ -22,4 +23,5 @@ RSpec.describe 'bars index page' do
 
     expect(current_path).to eq("/bars/#{@fort_greene.id}/drinks")
   end
+
 end

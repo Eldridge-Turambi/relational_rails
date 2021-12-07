@@ -12,8 +12,11 @@ Rails.application.routes.draw do
 
   get '/bars', to: 'bars#index'
   get '/bars/new', to: 'bars#new'
-  post '/bars', to: 'bars#create'
   get '/bars/:id', to: 'bars#show'
+  post '/bars', to: 'bars#create'
+  get '/bars/:id/edit', to: 'bars#edit'
+  patch '/bars/:id', to: 'bars#update'
+
   get '/bars/:id/drinks', to: 'bar_drinks#index'
 
   get '/drinks', to: 'drinks#index'

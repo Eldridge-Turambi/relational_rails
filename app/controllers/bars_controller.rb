@@ -8,12 +8,21 @@ class BarsController < ApplicationController
 
   def create
     Bar.create(bar_params)
-# binding.pry
     redirect_to '/bars'
   end
 
   def show
     @bar = Bar.find(params[:id])
+  end
+
+  def edit
+    @bar = Bar.find(params[:id])
+  end
+
+  def update
+    bar = Bar.find(params[:id])
+    bar.update(bar_params)
+    redirect_to "/bars/#{bar.id}"
   end
 
   private
