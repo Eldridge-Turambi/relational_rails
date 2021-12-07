@@ -1,0 +1,11 @@
+<%= form_with url: "/bars", method: :post, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :employee_count %>
+  <%= f.text_field :employee_count %>
+
+  <%= f.label :license %>
+  <%= f.text_field :license %>
+  <%= f.submit "Create Bar" %>
+<% end %>

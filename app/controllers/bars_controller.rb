@@ -6,14 +6,27 @@ class BarsController < ApplicationController
   def new
   end
 
-  # def create
-  #   # bar = Bar.new(bar_params)
-  #   # bar.save
-  #   # ^^^this is the same
-  #   bar = Bar.create(bar_params)
-  # end
+  def create
+    Bar.create(bar_params)
+    redirect_to '/bars'
+  end
 
   def show
     @bar = Bar.find(params[:id])
+  end
+
+  def edit
+    @bar = Bar.find(params[:id])
+  end
+
+  def update
+    bar = Bar.find(params[:id])
+    bar.update(bar_params)
+    redirect_to "/bars/#{bar.id}"
+  end
+
+  private
+  def bar_params
+    params.permit(:name, :employee_count, :license)
   end
 end

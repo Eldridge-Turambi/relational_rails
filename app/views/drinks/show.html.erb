@@ -1,3 +1,5 @@
 <h1><%= @drink.name %></h1>
   <p><%= @drink.cost %></p>
   <p><%= @drink.alcoholic_bev %></p>
+
+<%= link_to "Update Drink", "/drinks/#{@drink.id}/edit" %>

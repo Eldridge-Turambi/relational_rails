@@ -22,13 +22,20 @@ Rails.application.routes.draw do
   # get '/performers', to: 'performers#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # get '/bars', to: 'bars#create'
   get '/bars', to: 'bars#index'
+  get '/bars/new', to: 'bars#new'
   get '/bars/:id', to: 'bars#show'
+  post '/bars', to: 'bars#create'
+  get '/bars/:id/edit', to: 'bars#edit'
+  patch '/bars/:id', to: 'bars#update'
+
+  get '/bars/:id/drinks', to: 'bar_drinks#index'
+  get '/bars/:id/drinks/new', to: 'bar_drinks#new'
+  post '/bars/:id/drinks', to: 'bar_drinks#create'
 
   get '/drinks', to: 'drinks#index'
   get '/drinks/:id', to: 'drinks#show'
-
-  get '/bars/:id/drinks', to: 'bar_drinks#index'
+  get '/drinks/:id/edit', to: 'drinks#edit'
+  patch '/drinks/:id', to: 'drinks#update'
 
 end

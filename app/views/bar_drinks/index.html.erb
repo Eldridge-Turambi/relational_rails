@@ -1,6 +1,9 @@
 <h1>Drink Menu at <%= @bar.name  %></h1>
+
   <% @bar.drinks.each do |drink| %>
     <p><%= drink.name %></p>
     <p><%= drink.cost %></p>
     <p><%= drink.alcoholic_bev %></p>
   <% end %>
+
+  <%= link_to "Create Drink", "/bars/#{@bar.id}/drinks/new" %>

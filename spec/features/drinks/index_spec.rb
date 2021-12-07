@@ -19,4 +19,13 @@ RSpec.describe 'drinks index page' do
     expect(page).to have_content(@margarita.name)
     expect(page).to have_content(@glühwein.name)
   end
+
+  it 'creates a new drink record' do
+    visit '/bars'
+
+    click_link("New Bar")
+
+    expect(current_path).to eq('/bars/new')
+  end
+
 end
