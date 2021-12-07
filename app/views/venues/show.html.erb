@@ -1,3 +1,8 @@
 <header><%= link_to "#{@venue.name}'s performers here", "/venues/#{@venue.id}/performers" %></header>
 <h1><%= @venue.name  %></h1>
 <p><%= @venue.performer_count %></p>
+
+<%= link_to "Update Venue", "/venues/#{@venue.id}/edit" %>
+
+<%= @venue.lights  %>
+<%= @venue.capacity  %>

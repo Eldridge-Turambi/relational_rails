@@ -17,4 +17,12 @@ RSpec.describe 'Venue id page' do
 
     expect(current_path).to eq("/venues/#{@red_rocks.id}/performers")
   end
+
+  it 'see a link to update Venue' do
+    visit "/venues/#{@blue_bird.id}"
+
+    click_link "Update Venue"
+
+    expect(current_path).to eq("/venues/#{@blue_bird.id}/edit")
+  end
 end

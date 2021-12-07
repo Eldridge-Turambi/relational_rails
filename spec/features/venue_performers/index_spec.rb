@@ -23,4 +23,12 @@ RSpec.describe 'Index page of venue_performer page' do
     expect(page).to have_content(@john_mayer.repeater)
     expect(page).to have_content(@taylor_swift.repeater)
   end
+
+  it 'sees a link to create performer' do
+    visit "/venues/#{@red_rocks.id}/performers"
+
+    click_link "Create Performer"
+
+    expect(current_path).to eq("/venues/#{@red_rocks.id}/performers/new")
+  end
 end

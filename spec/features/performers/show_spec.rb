@@ -15,4 +15,10 @@ RSpec.describe 'show page' do
   it 'visits performer page' do
     expect(current_path).to eq("/performers/#{@kesha.id}")
   end
+
+  it 'sees a link to update performer' do
+    click_link "Update Performer"
+
+    expect(current_path).to eq("/performers/#{@kesha.id}/edit")
+  end
 end
