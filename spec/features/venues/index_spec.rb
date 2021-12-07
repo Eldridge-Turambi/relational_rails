@@ -34,5 +34,13 @@ RSpec.describe 'venues index page' do
 
       expect(current_path).to eq('/venues')
     end
+
+    it 'sees link to create Venue record' do
+      visit '/venues'
+
+      click_link("New Venue")
+
+      expect(current_path).to eq('/venues/new')
+    end
   end
 end

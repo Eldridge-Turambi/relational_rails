@@ -1,4 +1,5 @@
 <h1>Here are the performers in the <%= @venue.name %> venue</h1>
+<header> <%= link_to "Create Performer", "/venues/#{@venue.id}/performers/new" %></header>
 
 
 <% @performers.each do |performer| %>
