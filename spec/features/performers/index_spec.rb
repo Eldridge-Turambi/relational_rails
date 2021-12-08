@@ -49,4 +49,12 @@ RSpec.describe 'Performers index' do
     expect(page).to_not have_content(kesha.repeater)
   end
 
+  it 'sees a link to edit the performers' do
+    visit "/performers"
+
+    click_link "Edit #{@taylor_swift.name}'s info"
+
+    expect(current_path).to eq("/performers/#{@taylor_swift.id}/edit")
+  end
+
 end
