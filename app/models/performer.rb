@@ -5,7 +5,14 @@ class Performer < ApplicationRecord
 
   belongs_to :venue
 
+
   def self.repeated_performers
     where(repeater: true)
+  end
+
+
+
+  def self.alpha_sort
+    order(:name)
   end
 end

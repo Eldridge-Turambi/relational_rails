@@ -1,11 +1,10 @@
 require "rails_helper"
 RSpec.describe 'bar_drinks index page' do
   before :each do
-    @monkey_bar = Bar.create!(name: 'Monkey Bar', employee_count: 10, license: true)
     @fort_greene = Bar.create!(name: 'Fort Greene', employee_count: 20, license: true)
     @french_75 = Drink.create!(name: 'French 75', cost: 15, alcoholic_bev: true, bar_id: @fort_greene.id)
     @margarita = Drink.create!(name: 'Margarita', cost: 10, alcoholic_bev: true, bar_id: @fort_greene.id)
-    @glühwein = Drink.create!(name: 'Glüwhein', cost: 5, alcoholic_bev: true, bar_id: @monkey_bar.id)
+    @glühwein = Drink.create!(name: 'Glüwhein', cost: 5, alcoholic_bev: true, bar_id: @fort_greene.id)
     visit "/bars/#{@fort_greene.id}/drinks"
   end
 
@@ -22,5 +21,14 @@ RSpec.describe 'bar_drinks index page' do
     click_link "Create Drink"
 
     expect(current_path).to eq("/bars/#{@fort_greene.id}/drinks/new")
+  end
+
+  xit 'clicks button to sort drinks alphabetically' do
+    click_link "Sort Alphabetically"
+
+    expect(current_path).to eq("/bars/#{@fort_greene.id}/drinks")
+    expect(@french_75.name).to appear_before(@margarita.name)
+    expect(@french_75.name).to appear_before(@glühwein.name)
+    expect(@glühwein.name).to appear_before(@margarita.name)
   end
 end
