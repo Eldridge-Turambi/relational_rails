@@ -6,4 +6,8 @@
   <p><%= drink.name  %></p>
   <p><%= drink.cost  %></p>
   <p><%= drink.alcoholic_bev  %></p>
+
+  <p><%= link_to "Update Drink", "/drinks/#{drink.id}/edit" %></p>
+  <p><%= link_to "Delete #{drink.name}'s info", "/drinks/#{drink.id}", method: :delete %></p>
+
 <% end %>
