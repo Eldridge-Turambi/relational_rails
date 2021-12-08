@@ -6,10 +6,6 @@ class DrinksController < ApplicationController
   def new
   end
 
-  # def create
-  #   @drink = Drink.create(params[:id])
-  # end
-
   def edit
     @drink = Drink.find(params[:id])
   end
@@ -24,6 +20,12 @@ class DrinksController < ApplicationController
 
   def show
     @drink = Drink.find(params[:id])
+  end
+
+  def destroy
+    drink = Drink.find(params[:id])
+    drink.destroy
+    redirect_to "/drinks"
   end
 
   private

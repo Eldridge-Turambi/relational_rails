@@ -3,4 +3,4 @@
   <p><%= @drink.alcoholic_bev %></p>
 
 <%= link_to "Update Drink", "/drinks/#{@drink.id}/edit" %>
-<%# <%= link_to "Delete Drink", "/drinks/#{@drink.id}/edit" %> %>
+<%= link_to "Delete Drink", "/drinks/#{@drink.id}", method: :delete %>
