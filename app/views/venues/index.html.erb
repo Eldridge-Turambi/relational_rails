@@ -6,6 +6,7 @@
   <%= venue.name %>
   <%= venue.lights %>
   <%= venue.capacity %>
+  <%= link_to "Edit #{venue.name}'s info", "/venues/#{venue.id}/edit" %>
 <% end %>
 
 <%= link_to "New Venue", '/venues/new' %>

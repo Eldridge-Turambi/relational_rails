@@ -21,7 +21,7 @@ RSpec.describe 'bars index page' do
     expect(page).to have_content(@gin_mill.name)
   end
 
-  it 'sorts using created_by timestamps' do
+  xit 'sorts using created_by timestamps' do
     visit '/bars'
 
     expect(@fort_greene.name).to appear_before(@monkey_bar.name)

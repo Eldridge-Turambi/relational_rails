@@ -1,7 +1,7 @@
 class PerformersController < ApplicationController
 
   def index
-    @performers = Performer.all
+    @performers = Performer.repeated_performers
   end
 
   def new

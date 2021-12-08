@@ -32,12 +32,20 @@ RSpec.describe 'Index page of venue_performer page' do
     expect(current_path).to eq("/venues/#{@red_rocks.id}/performers/new")
   end
 
-  it 'sees a link alphabetize performers' do
+  xit 'sees a link alphabetize performers' do
     visit "/venues/#{@red_rocks.id}/performers"
 
     click_link "Sort Alphabetically"
 
     expect(current_path).to eq("/venues/#{@red_rocks.id}/performers")
     expect(@john_mayer.name).to appear_before(@taylor_swift.name)
+  end
+
+  it 'sees a link to edit the performers' do
+    visit "/venues/#{@red_rocks.id}/performers"
+
+    click_link "Edit #{@taylor_swift.name}'s info"
+
+    expect(current_path).to eq("/performers/#{@taylor_swift.id}/edit")
   end
 end

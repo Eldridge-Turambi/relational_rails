@@ -6,6 +6,7 @@
   <%= performer.name %>
   <%= performer.age %>
   <%= performer.repeater %>
+  <%= link_to "Edit #{performer.name}'s info", "/performers/#{performer.id}/edit" %>
 <% end %>
 
 <%= link_to "Sort Alphabetically", "/venues/#{@venue.id}/performers" %>

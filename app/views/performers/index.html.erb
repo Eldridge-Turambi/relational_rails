@@ -1,8 +1,10 @@
 <header><%= link_to "Venues", '/venues' %></header>
 <h1>These are the performers</h1>
 
+
 <% @performers.each do |performer| %>
   <%= performer.name %>
   <%= performer.age %>
   <%= performer.repeater %>
+  <%= link_to "Edit #{performer.name}'s info", "/performers/#{performer.id}/edit" %>
 <% end %>
