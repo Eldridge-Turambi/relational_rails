@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/87398716/145306050-5910d60c-3ce4-46a4-be06-383d0e1c66f1.png)
+
 # README
 
 # relational_rails
