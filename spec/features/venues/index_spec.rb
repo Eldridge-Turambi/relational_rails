@@ -42,5 +42,10 @@ RSpec.describe 'venues index page' do
 
       expect(current_path).to eq('/venues/new')
     end
+
+    it 'sees link to edit parent(venue) info on all instances off parent' do
+      click_link "Edit #{@blue_bird.name}'s info"
+      expect(current_path).to eq("/venues/#{@blue_bird.id}/edit")
+    end
   end
 end
