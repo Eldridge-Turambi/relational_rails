@@ -8,9 +8,6 @@ RSpec.describe 'Index page of venue_performer page' do
     @john_mayer = Performer.create!(name: 'John Mayer', age: 44, repeater: true, venue_id: @red_rocks.id)
   end
 
-  # As a visitor
-  # When I visit '/parents/:parent_id/child_table_name'
-  # Then I see each Child that is associated with that Parent with each Child's attributes:
   it 'sees each performer and attributes that is associated with this venue' do
     visit "/venues/#{@red_rocks.id}/performers"
 
@@ -57,9 +54,8 @@ RSpec.describe 'Index page of venue_performer page' do
     visit "/venues/#{red_rocks.id}/performers"
     fill_in "age", with: 33
 
-    #expect(page).to have_content(john_mayer.name)
     click_button "Apply"
-    
+
     expect(current_path).to eq("/venues/#{red_rocks.id}/performers")
     expect(page).to have_content(taylor_swift.name)
     expect(page).to_not have_content(john_mayer.name)

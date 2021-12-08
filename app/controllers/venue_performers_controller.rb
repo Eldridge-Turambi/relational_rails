@@ -5,10 +5,8 @@ class VenuePerformersController < ApplicationController
 
     if params[:age]
       @performers = Venue.age_filter(params[:age])
-    elsif params[:sort]
+    else params[:sort]
       @performers = Performer.alpha_sort
-    else
-      @performers = Performer.all
     end
   end
 
