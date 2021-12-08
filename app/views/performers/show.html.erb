@@ -4,3 +4,4 @@
 <p><%= @performer.repeater %></p>
 
 <%= link_to "Update Performer", "/performers/#{@performer.id}/edit" %>
+<%= link_to "Delete Performer", "/performers/#{@performer.id}", method: :delete %>

@@ -3,6 +3,7 @@
 <p><%= @venue.performer_count %></p>
 
 <%= link_to "Update Venue", "/venues/#{@venue.id}/edit" %>
+<%= link_to "Delete Venue", "/venues/#{@venue.id}", method: :delete %>
 
 <%= @venue.lights  %>
 <%= @venue.capacity  %>
