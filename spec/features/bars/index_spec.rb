@@ -53,4 +53,12 @@ RSpec.describe 'bars index page' do
 
     expect(current_path).to eq('/bars/new')
   end
+
+  it 'sees a link to edit the bar' do
+    visit '/bars'
+
+    click_link("Edit #{@fort_greene.name}'s Info")
+
+    expect(current_path).to eq("/bars/#{@fort_greene.id}/edit")
+  end
 end
