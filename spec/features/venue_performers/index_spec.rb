@@ -48,4 +48,20 @@ RSpec.describe 'Index page of venue_performer page' do
 
     expect(current_path).to eq("/performers/#{@taylor_swift.id}/edit")
   end
+
+  it 'sees a form to input > number value' do
+    red_rocks = Venue.create!(name: 'Red Rocks', lights: true, capacity: 9545)
+    taylor_swift = Performer.create!(name: 'Taylor Swift', age: 31, repeater: true, venue_id: @red_rocks.id)
+    john_mayer = Performer.create!(name: 'John Mayer', age: 44, repeater: true, venue_id: @red_rocks.id)
+
+    visit "/venues/#{red_rocks.id}/performers"
+    fill_in "age", with: 33
+
+    #expect(page).to have_content(john_mayer.name)
+    click_button "Apply"
+    
+    expect(current_path).to eq("/venues/#{red_rocks.id}/performers")
+    expect(page).to have_content(taylor_swift.name)
+    expect(page).to_not have_content(john_mayer.name)
+  end
 end
