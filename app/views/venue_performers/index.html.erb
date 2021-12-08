@@ -1,6 +1,11 @@
 <h1>Here are the performers in the <%= @venue.name %> venue</h1>
 <header> <%= link_to "Create Performer", "/venues/#{@venue.id}/performers/new" %></header>
 
+<%= form_with url: "/venues/#{@venue.id}/performers", method: :get, local: true do |f| %>
+  <%= f.label :age, "Only return records with more than given number" %>
+  <%= f.number_field :age %>
+  <%= f.submit "Apply" %>
+<% end %>
 
 <% @performers.each do |performer| %>
   <%= performer.name %>

@@ -2,7 +2,12 @@ class VenuePerformersController < ApplicationController
 
   def index
     @venue = Venue.find(params[:id])
-    @performers = Performer.alpha_sort
+
+    if params[:age]
+      @performers = Venue.age_filter(params[:age])
+    else params[:sort]
+      @performers = Performer.alpha_sort
+    end
   end
 
   def new

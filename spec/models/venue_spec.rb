@@ -22,4 +22,13 @@ RSpec.describe Venue do
     expect(red_rocks.performer_count).to eq(2)
     expect(blue_bird.performer_count).to eq(1)
   end
+
+  it 'filters performers based on age' do
+    red_rocks = Venue.create!(name: 'Red Rocks', lights: true, capacity: 9545)
+    taylor_swift = Performer.create!(name: 'Taylor Swift', age: 31, repeater: true, venue_id: red_rocks.id)
+    john_mayer = Performer.create!(name: 'John Mayer', age: 44, repeater: true, venue_id: red_rocks.id)
+
+    expect(Venue.age_filter(33)).to eq([taylor_swift])
+    expect(Venue.age_filter(33)).to_not include([john_mayer])
+  end
 end

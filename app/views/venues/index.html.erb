@@ -7,6 +7,7 @@
   <%= venue.lights %>
   <%= venue.capacity %>
   <%= link_to "Edit #{venue.name}'s info", "/venues/#{venue.id}/edit" %>
+  <%= link_to "Delete #{venue.name}'s info", "/venues/#{venue.id}", method: :delete %>
 <% end %>
 
 <%= link_to "New Venue", '/venues/new' %>

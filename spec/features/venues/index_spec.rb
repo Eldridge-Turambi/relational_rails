@@ -47,5 +47,14 @@ RSpec.describe 'venues index page' do
       click_link "Edit #{@blue_bird.name}'s info"
       expect(current_path).to eq("/venues/#{@blue_bird.id}/edit")
     end
+
+    it 'sees a link do delete the Parent(Venue)' do
+      expect(page).to have_content(@red_rocks.name)
+
+      click_link "Delete #{@red_rocks.name}'s info"
+
+      expect(current_path).to eq("/venues")
+      expect(page).to_not have_content(@red_rocks.name)
+    end
   end
 end
