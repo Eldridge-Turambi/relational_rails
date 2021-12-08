@@ -7,3 +7,5 @@
 <%= link_to "#{@bar.name}'s Drinks Here", "/bars/#{@bar.id}/drinks" %>
 
 <%= link_to "Update Bar", "/bars/#{@bar.id}/edit" %>
+
+<%= link_to "Delete Bar", "/bars/#{@bar.id}", method: :delete %>

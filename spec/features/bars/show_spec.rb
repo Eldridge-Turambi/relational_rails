@@ -23,5 +23,4 @@ RSpec.describe 'bars index page' do
 
     expect(current_path).to eq("/bars/#{@fort_greene.id}/drinks")
   end
-
 end
