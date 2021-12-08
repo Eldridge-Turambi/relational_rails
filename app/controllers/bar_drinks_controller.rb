@@ -1,7 +1,11 @@
 class BarDrinksController < ApplicationController
   def index
-    @bar = Bar.find(params[:id])
-    @drinks = Drink.alpha_sort
+      @bar = Bar.find(params[:id])
+    if params[:cost]
+      @drinks = Bar.cost_filter(params[:cost])
+    else params[:sort]
+      @drinks = Drink.alpha_sort
+    end
   end
 
   def new

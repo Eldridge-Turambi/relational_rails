@@ -13,13 +13,23 @@ RSpec.describe Bar do
   end
 
   it 'counts the drinks available' do
-    @monkey_bar = Bar.create!(name: 'Monkey Bar', employee_count: 10, license: true)
-    @fort_greene = Bar.create!(name: 'Fort Greene', employee_count: 20, license: true)
-    @french_75 = Drink.create!(name: 'French 75', cost: 15, alcoholic_bev: true, bar_id: @fort_greene.id)
-    @margarita = Drink.create!(name: 'Margarita', cost: 10, alcoholic_bev: true, bar_id: @fort_greene.id)
-    @glühwein = Drink.create!(name: 'Glüwhein', cost: 5, alcoholic_bev: true, bar_id: @monkey_bar.id)
+    monkey_bar = Bar.create!(name: 'Monkey Bar', employee_count: 10, license: true)
+    fort_greene = Bar.create!(name: 'Fort Greene', employee_count: 20, license: true)
+    french_75 = Drink.create!(name: 'French 75', cost: 15, alcoholic_bev: true, bar_id: fort_greene.id)
+    margarita = Drink.create!(name: 'Margarita', cost: 10, alcoholic_bev: true, bar_id: fort_greene.id)
+    glühwein = Drink.create!(name: 'Glüwhein', cost: 5, alcoholic_bev: true, bar_id: monkey_bar.id)
 
-    expect(@fort_greene.drinks_count).to eq(2)
-    expect(@monkey_bar.drinks_count).to eq(1)
+    expect(fort_greene.drinks_count).to eq(2)
+    expect(monkey_bar.drinks_count).to eq(1)
+  end
+
+  it "filters drinks based on cost" do
+    fort_greene = Bar.create!(name: 'Fort Greene', employee_count: 20, license: true)
+    french_75 = Drink.create!(name: 'French 75', cost: 15, alcoholic_bev: true, bar_id: fort_greene.id)
+    margarita = Drink.create!(name: 'Margarita', cost: 10, alcoholic_bev: true, bar_id: fort_greene.id)
+    glühwein = Drink.create!(name: 'Glüwhein', cost: 5, alcoholic_bev: true, bar_id: fort_greene.id)
+
+    expect(Bar.cost_filter(5)).to eq([french_75, margarita])
+    expect(Bar.cost_filter(5)).to_not include([glühwein])
   end
 end

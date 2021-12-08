@@ -8,9 +8,6 @@ RSpec.describe 'Index page of venue_performer page' do
     @john_mayer = Performer.create!(name: 'John Mayer', age: 44, repeater: true, venue_id: @red_rocks.id)
   end
 
-  # As a visitor
-  # When I visit '/parents/:parent_id/child_table_name'
-  # Then I see each Child that is associated with that Parent with each Child's attributes:
   it 'sees each performer and attributes that is associated with this venue' do
     visit "/venues/#{@red_rocks.id}/performers"
 
@@ -32,7 +29,7 @@ RSpec.describe 'Index page of venue_performer page' do
     expect(current_path).to eq("/venues/#{@red_rocks.id}/performers/new")
   end
 
-  xit 'sees a link alphabetize performers' do
+  it 'sees a link alphabetize performers' do
     visit "/venues/#{@red_rocks.id}/performers"
 
     click_link "Sort Alphabetically"

@@ -15,12 +15,6 @@ RSpec.describe 'bars index page' do
     fort_greene = Bar.create!(name: 'FortGreene', employee_count: 19, license: true)
 
     visit "/bars/#{fort_greene.id}/edit"
-    #
-    # expect(page).to have_content('FortGreene')
-    # expect(page).to have_content(19)
-    # expect(page).to have_content(true)
-
-    # click_button("Edit FortGreene")
 
     fill_in("name", with: "Fort Greene")
     fill_in("employee_count", with: 10)

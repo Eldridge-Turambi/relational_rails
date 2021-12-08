@@ -23,12 +23,23 @@ RSpec.describe 'bar_drinks index page' do
     expect(current_path).to eq("/bars/#{@fort_greene.id}/drinks/new")
   end
 
-  xit 'clicks button to sort drinks alphabetically' do
+  it 'clicks button to sort drinks alphabetically' do
     click_link "Sort Alphabetically"
 
     expect(current_path).to eq("/bars/#{@fort_greene.id}/drinks")
     expect(@french_75.name).to appear_before(@margarita.name)
     expect(@french_75.name).to appear_before(@glühwein.name)
     expect(@glühwein.name).to appear_before(@margarita.name)
+  end
+
+  it 'sees the form to input > number value' do
+    fill_in "cost", with: 5
+
+    click_button 'Apply'
+
+    expect(current_path).to eq("/bars/#{@fort_greene.id}/drinks")
+    expect(page).to have_content(@french_75.name)
+    expect(page).to have_content(@margarita.name)
+    expect(page).to_not have_content(@glühwein.name)
   end
 end

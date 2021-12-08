@@ -8,4 +8,8 @@ class Bar < ApplicationRecord
   def drinks_count
     drinks.count
   end
+
+  def self.cost_filter(cost)
+    Drink.where("cost > ?", cost)
+  end
 end
