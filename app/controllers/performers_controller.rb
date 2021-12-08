@@ -25,6 +25,12 @@ class PerformersController < ApplicationController
     @performer = Performer.find(params[:id])
   end
 
+  def destroy
+    performer = Performer.find(params[:id])
+    performer.destroy
+    redirect_to "/performers"
+  end
+
 private
 def performer_params
   params.permit(:name, :age, :repeater)
