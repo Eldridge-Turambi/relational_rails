@@ -4,8 +4,8 @@
 First project of Mod 2
 
 # Relations: 
-## Parent: Park/ Event
-## Child: Visitors/ Performers
+## Parent: Bar/ Venue
+## Child: Drinks/ Performers
 
 
 This README would normally document whatever steps are necessary to get the
