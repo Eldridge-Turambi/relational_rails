@@ -23,13 +23,4 @@ RSpec.describe 'bars index page' do
 
     expect(current_path).to eq("/bars/#{@fort_greene.id}/drinks")
   end
-
-  # it 'sees a link to delete a bar' do
-  #   visit "/bars/#{@fort_greene.id}"
-  #
-  #   click_link("Delete Bar")
-  #
-  #   expect(current_path).to eq("/bars/#{@fort_greene.id}")
-  # end
-
 end
