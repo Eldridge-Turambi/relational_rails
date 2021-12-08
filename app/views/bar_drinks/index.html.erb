@@ -1,10 +1,17 @@
 <h1>Drink Menu at <%= @bar.name  %></h1>
 
+  <%= form_with url: "/bars/#{@bar.id}/drinks", method: :get, local: true do |f| %>
+    <%= f.label :cost, 'Only return records with more than number of cost' %>
+    <%= f.number_field :cost %>
+
+    <%= f.submit 'Apply' %>
+  <% end %>
+
   <% @drinks.each do |drink| %>
     <p><%= drink.name %></p>
     <p><%= drink.cost %></p>
     <p><%= drink.alcoholic_bev %></p>
   <% end %>
 
-  <%= link_to "Create Drink", "/bars/#{@bar.id}/drinks/new" %>
-  <%= link_to "Sort Alphabetically", "/bars/#{@bar.id}/drinks" %>
+  <h3><%= link_to "Create Drink", "/bars/#{@bar.id}/drinks/new" %></h3>
+  <h3><%= link_to "Sort Alphabetically", "/bars/#{@bar.id}/drinks" %></h3>

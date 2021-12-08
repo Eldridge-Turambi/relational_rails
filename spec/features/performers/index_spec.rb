@@ -18,15 +18,12 @@ RSpec.describe 'Performers index' do
   it 'shows performers and their attributes' do
     expect(page).to have_content(@taylor_swift.name)
     expect(page).to have_content(@john_mayer.name)
-    #expect(page).to have_content(@kesha.name)
 
     expect(page).to have_content(@taylor_swift.age)
     expect(page).to have_content(@john_mayer.age)
-    #expect(page).to have_content(@kesha.age)
 
     expect(page).to have_content(@taylor_swift.repeater)
     expect(page).to have_content(@john_mayer.repeater)
-    #expect(page).to have_content(@kesha.repeater)
   end
 
   it 'only shows performers who have been to the venue before' do

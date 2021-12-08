@@ -18,7 +18,5 @@ RSpec.describe 'create a new performer for Venue' do
     expect(current_path).to eq("/venues/#{@red_rocks.id}/performers")
     expect(@red_rocks.performers.count).to eq(2)
     expect(page).to have_content("Taylor Swift")
-    # expect(page).to have_content(true)
-    # expect(page).to have_content(1000)
   end
 end

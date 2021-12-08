@@ -29,7 +29,7 @@ RSpec.describe 'Index page of venue_performer page' do
     expect(current_path).to eq("/venues/#{@red_rocks.id}/performers/new")
   end
 
-  xit 'sees a link alphabetize performers' do
+  it 'sees a link alphabetize performers' do
     visit "/venues/#{@red_rocks.id}/performers"
 
     click_link "Sort Alphabetically"

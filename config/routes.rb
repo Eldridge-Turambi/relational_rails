@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/', to: 'welcome#index'
-  #resources :venues
+
   get '/venues', to: 'venues#index'
   get '/venues/new', to: 'venues#new'
   get '/venues/:id', to: 'venues#show'
@@ -21,11 +21,6 @@ Rails.application.routes.draw do
   patch '/performers/:id', to: 'performers#update'
   delete '/performers/:id', to: 'performers#destroy'
 
-
-
-  # get '/performers', to: 'performers#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   get '/bars', to: 'bars#index'
   get '/bars/new', to: 'bars#new'
   get '/bars/:id', to: 'bars#show'
@@ -43,6 +38,4 @@ Rails.application.routes.draw do
   get '/drinks/:id/edit', to: 'drinks#edit'
   patch '/drinks/:id', to: 'drinks#update'
   delete '/drinks/:id', to: 'drinks#destroy'
-
-
 end

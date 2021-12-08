@@ -1,11 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Venue id page' do
-  # before :each do
-  # #  @blue_bird = Venue.create!(name: 'Blue Bir', lights: true, capacity: 150)
-  #   visit "/venues/#{@blue_bird.id}"
-  #   click_link "Update Venue"
-  # end
 
   it 'fills out form, hit submit and taken back to venue index' do
     blue_bird = Venue.create!(name: 'BLUE nir', lights: false, capacity: 500)

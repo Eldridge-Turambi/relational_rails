@@ -5,7 +5,6 @@ RSpec.describe Performer do
   describe 'validations' do
     it {should validate_presence_of(:name)}
     it {should validate_presence_of(:age)}
-  #  it {should validate_presence_of(:repeater)}
   end
 
   describe 'relationships' do
@@ -31,6 +30,6 @@ RSpec.describe Performer do
       john_mayer = Performer.create!(name: 'John Mayer', age: 44, repeater: true, venue_id: red_rocks.id)
 
       expect(Performer.alpha_sort).to eq([john_mayer, taylor_swift])
-    end 
+    end
   end
 end
