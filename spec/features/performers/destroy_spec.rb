@@ -9,7 +9,7 @@ RSpec.describe "Deletes Performer" do
 
     click_link "Delete Performer"
 
-    expect(current_path).to eq("/performers/")
+    expect(current_path).to eq("/performers")
     expect(page).to_not have_content(kesha.name)
   end
 end
