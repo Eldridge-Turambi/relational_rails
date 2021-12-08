@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/venues', to: 'venues#create'
   get '/venues/:id/edit', to: 'venues#edit'
   patch '/venues/:id', to: 'venues#update'
+  delete '/venues/:id', to: 'venues#destroy'
 
   get '/performers', to: 'performers#index'
   get '/performers/:id', to: 'performers#show'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
 
   get '/performers/:id/edit', to: 'performers#edit'
   patch '/performers/:id', to: 'performers#update'
+
 
 
   # get '/performers', to: 'performers#index'
