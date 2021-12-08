@@ -2,7 +2,7 @@ class VenuePerformersController < ApplicationController
 
   def index
     @venue = Venue.find(params[:id])
-    @performers = @venue.performers
+    @performers = Performer.alpha_sort
   end
 
   def new
